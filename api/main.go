@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"projeto-01/internal/database"
 	"projeto-01/internal/router"
 
 	"github.com/gin-gonic/gin"
@@ -14,6 +15,10 @@ func main() {
 
 	if err := godotenv.Load(); err != nil {
 		log.Println("Error loading .env file - using default values")
+	}
+
+	if err := database.Connect(); err != nil {
+		log.Fatal("Erro ao conectar ao banco", err)
 	}
 
 	port := os.Getenv("PORT")
