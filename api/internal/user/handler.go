@@ -4,6 +4,7 @@ import (
 	"errors"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
@@ -13,7 +14,7 @@ func RegisterUsers(c *gin.Context) {
 	var req RegisterRequest
 
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		abortWithBindError(c, err)
 		return
 	}
 
@@ -59,7 +60,7 @@ func LoginUsers(c *gin.Context) {
 	var req LoginRequest
 
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		abortWithBindError(c, err)
 		return
 	}
 
@@ -83,4 +84,40 @@ func LoginUsers(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, u)
+}
+
+func UpdateUsers(c *gin.Context) {
+	id, err := strconv.Atoi(c.Param("id"))
+	if err != nil || id <= 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "ID inválido"})
+		return
+	}
+
+	var req UpdateRequest
+
+	if err := c.ShouldBindJSON(&req); err != nil {
+		abortWithBindError(c, err)
+		return
+	}
+
+	ctx := c.Request.Context()
+
+	u := User{
+		ID:    id,
+		Name:  req.Name,
+		Email: req.Email,
+	}
+
+	updated, err := updateUser(ctx, u)
+	if errors.Is(err, ErrNotFound) {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Usuário não encontrado"})
+		return
+	}
+	if err != nil {
+		log.Printf("update: updateUser(%d): %v", id, err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Erro ao atualizar usuário"})
+		return
+	}
+
+	c.JSON(http.StatusOK, updated)
 }

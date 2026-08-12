@@ -11,6 +11,11 @@ type User struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
+type UpdateRequest struct {
+	Name  string `json:"name" binding:"required,min=3,max=50"`
+	Email string `json:"email" binding:"required,email"`
+}
+
 type RegisterRequest struct {
 	Name     string `json:"name" binding:"required,min=3,max=50"`
 	Email    string `json:"email" binding:"required,email"`
