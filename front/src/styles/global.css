@@ -10,6 +10,12 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* Sem isso o header sticky cobre o título ao pular por âncora */
+  scroll-padding-top: var(--header-height);
+}
+
 html,
 body,
 #root {
@@ -28,7 +34,8 @@ body {
 h1,
 h2,
 h3 {
-  line-height: 1.15;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
@@ -43,7 +50,17 @@ input {
   color: inherit;
 }
 
+svg {
+  display: block;
+}
+
 :focus-visible {
   outline: 2px solid var(--color-text);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

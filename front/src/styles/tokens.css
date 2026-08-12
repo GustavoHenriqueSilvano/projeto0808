@@ -5,13 +5,15 @@
   --color-accent: #4b262f;
   --color-text: #eed3ba;
 
-  /* Variações derivadas da paleta (mesmo tom, opacidades diferentes) */
-  --color-surface: #1d1a17;
-  --color-border: #2e2925;
-  --color-accent-hover: #5e303b;
+  /* Variações derivadas da paleta (mesmo tom, luminâncias diferentes) */
+  --color-surface: #1a1715;
+  --color-surface-raised: #201c19;
+  --color-border: #2a2521;
+  --color-border-strong: #3a332d;
+  --color-accent-hover: #5c2e39;
   --color-accent-border: #6b3a45;
-  --color-text-muted: #eed3ba99;
-  --color-text-faint: #eed3ba59;
+  --color-text-muted: #eed3baa8;
+  --color-text-faint: #eed3ba66;
   --color-danger: #d98a80;
 
   /* Espaçamento */
@@ -19,19 +21,32 @@
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
+  --space-5: 20px;
   --space-6: 24px;
   --space-8: 32px;
+  --space-10: 40px;
   --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
 
   /* Forma */
+  --radius-sm: 6px;
   --radius: 8px;
-  --radius-lg: 14px;
+  --radius-lg: 12px;
 
   /* Tipografia */
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Roboto Mono', monospace;
+  --text-xs: 12px;
   --text-sm: 14px;
   --text-base: 16px;
+  --text-md: 17px;
   --text-lg: 20px;
-  --text-xl: 32px;
-  --text-2xl: 44px;
+  --text-xl: 28px;
+  --text-2xl: 38px;
+  --text-3xl: 56px;
+
+  /* Layout */
+  --container: 1100px;
+  --header-height: 68px;
 }

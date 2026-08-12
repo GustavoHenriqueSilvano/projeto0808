@@ -1,0 +1,56 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  background-color: color-mix(in srgb, var(--color-bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-8);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.nav a:hover {
+  color: var(--color-text);
+}
+
+/* Nav some no mobile; o botão Entrar é a ação que precisa sobreviver. */
+@media (max-width: 820px) {
+  .nav {
+    display: none;
+  }
+}

@@ -1,0 +1,30 @@
+.section {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-24);
+}
+
+.plain {
+  border-top: none;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  max-width: 22ch;
+}
+
+.description {
+  margin-top: var(--space-5);
+  font-size: var(--text-md);
+  color: var(--color-text-muted);
+  max-width: 52ch;
+}
+
+@media (max-width: 820px) {
+  .section {
+    padding-block: var(--space-16);
+  }
+
+  .title {
+    font-size: var(--text-xl);
+  }
+}

@@ -1,0 +1,18 @@
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-8);
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.link:hover {
+  color: var(--color-text);
+}

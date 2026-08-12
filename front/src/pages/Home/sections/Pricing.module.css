@@ -1,0 +1,140 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+  margin-top: var(--space-16);
+}
+
+.cycles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cycle {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+}
+
+/* O ciclo mais vantajoso ganha borda mais forte, não cor cheia */
+.cycleHighlighted {
+  border-color: var(--color-border-strong);
+  background-color: var(--color-surface-raised);
+}
+
+.cycleName {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent-border);
+  font-weight: 400;
+}
+
+.cycleNote {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.cyclePrice {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cyclePriceValue {
+  display: block;
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.cyclePriceUnit {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+}
+
+/* Card de destaque */
+.highlight {
+  padding: var(--space-8);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface-raised);
+}
+
+.highlightPrice {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.highlightValue {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.highlightUnit {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+}
+
+.highlightSavings {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.includes {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.include {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.includeIcon {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.disclaimer {
+  margin-top: var(--space-4);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

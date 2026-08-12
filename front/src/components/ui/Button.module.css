@@ -3,16 +3,15 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
   border-radius: var(--radius);
   border: 1px solid transparent;
   cursor: pointer;
-  font-size: var(--text-base);
   font-weight: 500;
+  white-space: nowrap;
   transition:
-    background-color 0.2s,
-    border-color 0.2s,
-    opacity 0.2s;
+    background-color 0.18s,
+    border-color 0.18s,
+    opacity 0.18s;
 }
 
 .button:disabled {
@@ -20,26 +19,43 @@
   cursor: not-allowed;
 }
 
-/* Fundo accent é escuro sobre um bg escuro: a borda é o que dá o recorte. */
+/* Tamanhos */
+.sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.md {
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.lg {
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--text-base);
+}
+
+/* Variantes.
+   O accent é escuro sobre um fundo escuro: a borda é o que dá o recorte. */
 .primary {
   background-color: var(--color-accent);
   border-color: var(--color-accent-border);
   color: var(--color-text);
 }
 
-.primary:hover:not(:disabled) {
+.primary:hover {
   background-color: var(--color-accent-hover);
 }
 
 .ghost {
   background-color: transparent;
-  border-color: var(--color-border);
+  border-color: var(--color-border-strong);
   color: var(--color-text);
 }
 
-.ghost:hover:not(:disabled) {
+.ghost:hover {
   border-color: var(--color-accent-border);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-raised);
 }
 
 .block {
