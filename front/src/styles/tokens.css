@@ -1,0 +1,37 @@
+/* Fonte única de verdade das cores. Nenhum hex fora deste arquivo. */
+:root {
+  /* Paleta base */
+  --color-bg: #151311;
+  --color-accent: #4b262f;
+  --color-text: #eed3ba;
+
+  /* Variações derivadas da paleta (mesmo tom, opacidades diferentes) */
+  --color-surface: #1d1a17;
+  --color-border: #2e2925;
+  --color-accent-hover: #5e303b;
+  --color-accent-border: #6b3a45;
+  --color-text-muted: #eed3ba99;
+  --color-text-faint: #eed3ba59;
+  --color-danger: #d98a80;
+
+  /* Espaçamento */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  /* Forma */
+  --radius: 8px;
+  --radius-lg: 14px;
+
+  /* Tipografia */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 32px;
+  --text-2xl: 44px;
+}

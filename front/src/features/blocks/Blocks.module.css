@@ -1,0 +1,60 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  /* touch-action: none é obrigatório pro drag funcionar em mobile */
+  touch-action: none;
+}
+
+.block[data-dragging='true'] {
+  opacity: 0.35;
+}
+
+.overlay {
+  box-shadow: 0 8px 24px rgb(0 0 0 / 45%);
+  border-color: var(--color-accent-border);
+  cursor: grabbing;
+}
+
+.handle {
+  background: none;
+  border: none;
+  padding: 0 var(--space-1);
+  font-size: var(--text-lg);
+  line-height: 1;
+  opacity: 0.5;
+  cursor: grab;
+}
+
+.handle:focus-visible {
+  opacity: 1;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 15px;
+}
+
+.type {
+  font-size: 12px;
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

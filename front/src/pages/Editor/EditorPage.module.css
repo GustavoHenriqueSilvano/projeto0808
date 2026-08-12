@@ -1,0 +1,19 @@
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-4);
+}
+
+.heading {
+  margin-bottom: var(--space-8);
+}
+
+.title {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-1);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
